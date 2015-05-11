@@ -10,7 +10,15 @@
               android:gravity="center_horizontal">
   <EditText
       android:id="@+id/number_of_points"
-      android:hint="Total Points"
+      android:hint="@string/total_points"
+      android:gravity="center_horizontal"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:inputType="number"/>
+
+  <EditText
+      android:id="@+id/velocity"
+      android:hint="@string/velocity"
       android:gravity="center_horizontal"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
@@ -18,7 +26,7 @@
 
   <TextView
       android:id="@+id/number_of_iterations"
-      android:text="Number of Iterations Needed = "
+      android:text="@string/number_of_iterations"
       android:gravity="center_horizontal"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"

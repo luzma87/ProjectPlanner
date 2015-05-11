@@ -5,4 +5,7 @@
   <string name="hello_world">Hello world!</string>
   <string name="action_settings">Settings</string>
   <string name="calculate">Calculate</string>
+  <string name="total_points">Total Points</string>
+  <string name="velocity">Velocity</string>
+  <string name="number_of_iterations">Number of Iterations Needed = </string>
 </resources>
