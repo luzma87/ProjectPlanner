@@ -6,6 +6,9 @@
   <string name="calculate">Calculate</string>
   <string name="total_points">Total Points</string>
   <string name="velocity">Velocity</string>
-  <string name="number_of_iterations">Number of Iterations Needed = </string>
+  <string name="number_of_iterations">Number of Iterations = </string>
+  <string name="adjusted_number_of_iterations">Adjusted Number of Iterations = </string>
   <string name="title_activity_result">ResultActivity</string>
+  <string name="buffer">Buffer</string>
+  <string name="adjust_for_buffer">Adjust for Buffer</string>
 </resources>
