@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.bootcamp.projectplanner.repository.ProjectPlanRepository;
 import android.widget.Toast;
+
 
 import static android.bootcamp.projectplanner.Constants.ADJUSTED_ITERATIONS;
 import static android.bootcamp.projectplanner.Constants.ITERATIONS;
@@ -19,7 +21,6 @@ public class ProjectPlannerActivity extends Activity {
 
   private static final int BUFFER_ADJUST_REQUEST_CODE = 3239;
   private static final int IMAGE_CAPTURE_REQUEST_CODE = 2827;
-
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +32,13 @@ public class ProjectPlannerActivity extends Activity {
     int totalPoints = readTextAsInteger(R.id.number_of_points);
     int velocity = readTextAsInteger(R.id.velocity);
     int result = totalPoints / velocity;
+    TextView label = (TextView) findViewById(R.id.label_num_of_iterations);
+    label.setText(R.string.number_of_iterations);
+
     TextView resultView = (TextView) findViewById(R.id.number_of_iterations);
-    String resultString = getString(R.string.number_of_iterations) + String.valueOf(result);
+    String resultString = String.valueOf(result);
     resultView.setText(resultString);
+
     Intent resultIntent = new Intent(this, ResultActivity.class);
     resultIntent.putExtra(ITERATIONS, result);
     startActivityForResult(resultIntent, BUFFER_ADJUST_REQUEST_CODE);
@@ -53,7 +58,10 @@ public class ProjectPlannerActivity extends Activity {
     if (resultCode == RESULT_OK) {
       if (requestCode == BUFFER_ADJUST_REQUEST_CODE) {
         int result = data.getIntExtra(ADJUSTED_ITERATIONS, 0);
-        String resultString = getString(R.string.adjusted_number_of_iterations) + String.valueOf(result);
+        TextView label = (TextView) findViewById(R.id.label_num_of_iterations);
+        label.setText(R.string.adjusted_number_of_iterations);
+
+        String resultString = String.valueOf(result);
         ((TextView) findViewById(R.id.number_of_iterations)).setText(resultString);
       }
       else if (requestCode == IMAGE_CAPTURE_REQUEST_CODE && data != null) {
@@ -65,5 +73,14 @@ public class ProjectPlannerActivity extends Activity {
   private void showImage(Bitmap data) {
     ImageView issueImageView = (ImageView) findViewById(R.id.capturedImage);
     issueImageView.setImageBitmap(data);
+  }
+
+  public void store(View view) {
+    ProjectPlanRepository projectPlanRepository = new ProjectPlanRepository(this);
+    int totalPoints = readTextAsInteger(R.id.number_of_points);
+    int velocity = readTextAsInteger(R.id.velocity);
+    int numOfIterations = Integer.parseInt(((TextView) findViewById(R.id.number_of_iterations)).getText().toString());
+    projectPlanRepository.storePlan(totalPoints, velocity, numOfIterations);
+    Toast.makeText(this, "Saved in DB", Toast.LENGTH_SHORT).show();
   }
 }
