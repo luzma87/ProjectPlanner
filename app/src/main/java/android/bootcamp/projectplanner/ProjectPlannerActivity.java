@@ -65,7 +65,7 @@ public class ProjectPlannerActivity extends Activity {
         ((TextView) findViewById(R.id.number_of_iterations)).setText(resultString);
       }
       else if (requestCode == IMAGE_CAPTURE_REQUEST_CODE && data != null) {
-        showImage((Bitmap) data.getExtras().get("data"));
+        showImage((Bitmap) data.getExtras().get(Constants.THUMBNAIL));
       }
     }
   }
@@ -81,6 +81,6 @@ public class ProjectPlannerActivity extends Activity {
     int velocity = readTextAsInteger(R.id.velocity);
     int numOfIterations = Integer.parseInt(((TextView) findViewById(R.id.number_of_iterations)).getText().toString());
     projectPlanRepository.storePlan(totalPoints, velocity, numOfIterations);
-    Toast.makeText(this, "Saved in DB", Toast.LENGTH_SHORT).show();
+    Toast.makeText(this, R.string.saved_in_db, Toast.LENGTH_SHORT).show();
   }
 }

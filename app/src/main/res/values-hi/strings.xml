@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">परियोजना योजनाकार</string>
+  <string name="title_activity_project_planner">परियोजना योजनाकार पृष्ठ</string>
+  <string name="title_activity_result">परिणाम पृष्ठ</string>
+
+  <string name="calculate">गणना करिए</string>
+  <string name="total_points">कुल अंक</string>
+  <string name="velocity">गति</string>
+  <string name="number_of_iterations">पुनरावृति की संख्या =</string>
+  <string name="adjusted_number_of_iterations">समंजित पुनरावृति की संख्या =</string>
+  <string name="buffer">अंतर्रोध</string>
+  <string name="adjust_for_buffer">अंतर्रोध के लिए समंजन करिये </string>
+  <string name="save">सुरक्षित करिए</string>
+  <string name="saved_in_db">आधार-सामग्री भंडार में सुरक्षित हो गया </string>
+</resources>

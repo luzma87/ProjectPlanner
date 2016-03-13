@@ -1,15 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name">ProjectPlanner</string>
   <string name="title_activity_project_planner">ProjectPlannerActivity</string>
+  <string name="title_activity_result">ResultActivity</string>
 
-  <string name="action_settings">Settings</string>
   <string name="calculate">Calculate</string>
   <string name="total_points">Total Points</string>
   <string name="velocity">Velocity</string>
   <string name="number_of_iterations">Number of Iterations = </string>
   <string name="adjusted_number_of_iterations">Adjusted Number of Iterations = </string>
-  <string name="title_activity_result">ResultActivity</string>
   <string name="buffer">Buffer</string>
   <string name="adjust_for_buffer">Adjust for Buffer</string>
   <string name="save">Save</string>
+  <string name="saved_in_db">Saved in DB</string>
 </resources>
